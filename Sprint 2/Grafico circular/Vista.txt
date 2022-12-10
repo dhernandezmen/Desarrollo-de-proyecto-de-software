@@ -1,0 +1,11 @@
+ SELECT gestion.ge_id,
+    estado.es_nombre,
+    subestado.sub_tipo,
+    cliente.cli_nombre
+   FROM (((((gestion
+     JOIN funcionario ON ((funcionario.fu_id = gestion.fu_id)))
+     JOIN subestado ON ((subestado.sub_id = gestion.sub_id)))
+     JOIN estado ON ((estado.es_id = subestado.es_id)))
+     JOIN deuda ON (((deuda.deu_rut)::text = (gestion.deu_rut)::text)))
+     JOIN cliente ON ((cliente.cli_id = deuda.cli_id)))
+  ORDER BY gestion.ge_id
