@@ -87,10 +87,20 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.Bienvenida.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; color:#ffffff;\">Bienvenido<br/>Al sistema de evaluacion de desempe├▒o de<br/>We Collect</span></p></body></html>"))
+        self.Bienvenida.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:18pt; color:#ffffff;\">Bienvenido<br/>Al sistema de evaluacion de desempeño de<br/>We Collect</span></p></body></html>"))
         self.Ev.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:12pt; color:#ffffff;\">Seleccione que quiere evaluar:</span></p></body></html>"))
         self.EV1.setText(_translate("MainWindow", "Desempeño anual"))
         self.EV2.setText(_translate("MainWindow", "Desempeño diario"))
         self.torta.setText(_translate("MainWindow", "Contactados"))
         self.kpi.setText(_translate("MainWindow", "KPIs"))
         self.pushButton.setText(_translate("MainWindow", "Salir"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
